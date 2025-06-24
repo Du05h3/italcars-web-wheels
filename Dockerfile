@@ -26,8 +26,8 @@ COPY nginx.conf /etc/nginx/nginx.conf
 # Copy built application from builder stage
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Copy robots.txt if exists
-COPY --from=builder /app/public/robots.txt /usr/share/nginx/html/robots.txt 2>/dev/null || true
+# Copy robots.txt
+COPY --from=builder /app/public/robots.txt /usr/share/nginx/html/robots.txt
 
 # Expose port 80
 EXPOSE 80
