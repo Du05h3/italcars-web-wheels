@@ -1,0 +1,29 @@
+
+version: '3.8'
+
+services:
+  italcars-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: italcars-website
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./logs:/var/log/nginx
+    environment:
+      - NODE_ENV=production
+    labels:
+      - "com.docker.compose.project=italcars"
+    networks:
+      - italcars-network
+
+networks:
+  italcars-network:
+    driver: bridge
+
+volumes:
+  nginx-logs:
+    driver: local
