@@ -22,10 +22,10 @@ docker tag ${PROJECT_NAME}-web:latest ${PROJECT_NAME}-web:backup-$(date +%Y%m%d-
 
 # Rebuild and deploy with zero-downtime
 echo "🔨 Building new version..."
-docker-compose build --no-cache
+docker compose build --no-cache
 
 echo "🔄 Rolling update (zero-downtime)..."
-docker-compose up -d
+docker compose up -d
 
 # Wait for new container to be ready
 echo "⏳ Waiting for new version to be ready..."
@@ -43,10 +43,10 @@ if curl -f http://localhost/health > /dev/null 2>&1; then
 else
     echo "❌ Update failed. Rolling back..."
     docker tag ${PROJECT_NAME}-web:backup ${PROJECT_NAME}-web:latest
-    docker-compose up -d
+    docker compose up -d
     echo "🔙 Rollback completed. Please check the logs."
     exit 1
 fi
 
 # Show status
-docker-compose ps
+docker compose ps

@@ -21,7 +21,7 @@ if ! command -v docker &> /dev/null; then
 fi
 
 # Check if Docker Compose is installed
-if ! command -v docker-compose &> /dev/null; then
+if ! docker compose version &> /dev/null; then
     echo "❌ Docker Compose is not installed. Please install Docker Compose first."
     echo "Run: sudo apt install docker-compose-plugin"
     exit 1
@@ -32,7 +32,7 @@ mkdir -p logs
 
 # Stop existing containers
 echo "🛑 Stopping existing containers..."
-docker-compose -f $COMPOSE_FILE down --remove-orphans || true
+docker compose -f $COMPOSE_FILE down --remove-orphans || true
 
 # Remove old images (optional - uncomment if you want to force rebuild)
 # echo "🗑️  Removing old images..."
@@ -40,7 +40,7 @@ docker-compose -f $COMPOSE_FILE down --remove-orphans || true
 
 # Build and start containers
 echo "🔨 Building and starting containers..."
-docker-compose -f $COMPOSE_FILE up --build -d
+docker compose -f $COMPOSE_FILE up --build -d
 
 # Wait for container to be ready
 echo "⏳ Waiting for container to be ready..."
@@ -53,20 +53,20 @@ if curl -f http://localhost/health > /dev/null 2>&1; then
     echo "   Server IP: http://$(hostname -I | awk '{print $1}')"
 else
     echo "❌ Health check failed. Checking logs..."
-    docker-compose logs --tail=20
+    docker compose logs --tail=20
     exit 1
 fi
 
 # Show running containers
 echo "📊 Running containers:"
-docker-compose ps
+docker compose ps
 
 # Show useful commands
 echo ""
 echo "📋 Useful commands:"
-echo "   View logs: docker-compose logs -f"
-echo "   Stop: docker-compose down"
-echo "   Restart: docker-compose restart"
+echo "   View logs: docker compose logs -f"
+echo "   Stop: docker compose down"
+echo "   Restart: docker compose restart"
 echo "   Update: ./update.sh"
 echo ""
 echo "🎉 ITALCARS website deployed successfully!"
