@@ -1,5 +1,5 @@
 
-import { CarFront, Phone, MapPin, Clock, Wrench, Car, Users, Award } from "lucide-react";
+import { CarFront, Phone, MapPin, Clock, Package, Car, Users, Award, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -18,7 +18,7 @@ const Index = () => {
           </div>
           <nav className="hidden md:flex space-x-8">
             <a href="#o-nas" className="text-gray-700 hover:text-red-600 transition-colors font-medium">O nas</a>
-            <a href="#uslugi" className="text-gray-700 hover:text-red-600 transition-colors font-medium">Usługi</a>
+            <a href="#asortyment" className="text-gray-700 hover:text-red-600 transition-colors font-medium">Asortyment</a>
             <a href="#kontakt" className="text-gray-700 hover:text-red-600 transition-colors font-medium">Kontakt</a>
           </nav>
           <Button className="bg-red-600 hover:bg-red-700 text-white">
@@ -37,16 +37,16 @@ const Index = () => {
               ITALCARS
             </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90 animate-fade-in">
-              Twój zaufany partner w świecie motoryzacji
+              Sklep z częściami samochodowymi
             </p>
             <p className="text-lg mb-10 opacity-80 max-w-2xl mx-auto animate-fade-in">
-              Profesjonalne usługi motoryzacyjne w Wodzisławiu Śląskim. 
-              Oferujemy kompleksową obsługę pojazdów z najwyższą jakością i doświadczeniem.
+              Szeroki asortyment części zamiennych i akcesoriów motoryzacyjnych w Wodzisławiu Śląskim. 
+              Oferujemy profesjonalne doradztwo w wyborze odpowiednich części do Twojego pojazdu.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
               <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 font-semibold">
-                <Car className="w-5 h-5 mr-2" />
-                Nasze usługi
+                <ShoppingCart className="w-5 h-5 mr-2" />
+                Nasz asortyment
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-red-600 font-semibold">
                 <MapPin className="w-5 h-5 mr-2" />
@@ -58,12 +58,12 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="uslugi" className="py-16 bg-white">
+      <section id="asortyment" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nasze usługi</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nasz asortyment</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Kompleksowa obsługa motoryzacyjna z włoską precyzją i niemiecką dokładnością
+              Profesjonalna sprzedaż części samochodowych z fachowym doradztwem
             </p>
           </div>
           
@@ -71,13 +71,13 @@ const Index = () => {
             <Card className="hover:shadow-xl transition-all duration-300 border-0 shadow-lg hover:scale-105">
               <CardHeader className="text-center pb-2">
                 <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Wrench className="w-8 h-8 text-red-600" />
+                  <Package className="w-8 h-8 text-red-600" />
                 </div>
-                <CardTitle className="text-xl font-bold text-gray-800">Serwis mechaniczny</CardTitle>
+                <CardTitle className="text-xl font-bold text-gray-800">Części zamienne</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-center text-gray-600">
-                  Profesjonalny serwis i naprawa wszystkich marek pojazdów
+                  Oryginalne i zamiennikowe części do wszystkich marek pojazdów
                 </CardDescription>
               </CardContent>
             </Card>
@@ -87,11 +87,11 @@ const Index = () => {
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <CarFront className="w-8 h-8 text-green-600" />
                 </div>
-                <CardTitle className="text-xl font-bold text-gray-800">Sprzedaż części</CardTitle>
+                <CardTitle className="text-xl font-bold text-gray-800">Akcesoria motoryzacyjne</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-center text-gray-600">
-                  Oryginalne części zamienne i akcesoria motoryzacyjne
+                  Szeroki wybór akcesoriów i dodatków do pojazdów
                 </CardDescription>
               </CardContent>
             </Card>
@@ -101,11 +101,11 @@ const Index = () => {
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Users className="w-8 h-8 text-blue-600" />
                 </div>
-                <CardTitle className="text-xl font-bold text-gray-800">Doradztwo</CardTitle>
+                <CardTitle className="text-xl font-bold text-gray-800">Fachowe doradztwo</CardTitle>
               </CardHeader>
               <CardContent>
                 <CardDescription className="text-center text-gray-600">
-                  Fachowe doradztwo i pomoc w wyborze najlepszych rozwiązań
+                  Profesjonalna pomoc w wyborze odpowiednich części do Twojego pojazdu
                 </CardDescription>
               </CardContent>
             </Card>
@@ -120,13 +120,13 @@ const Index = () => {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">O ITALCARS</h2>
               <p className="text-lg text-gray-600 mb-6">
-                ITALCARS to firma z wieloletnim doświadczeniem w branży motoryzacyjnej. 
-                Specjalizujemy się w serwisie pojazdów włoskich marek, ale obsługujemy 
-                wszystkie marki samochodów.
+                ITALCARS to sklep motoryzacyjny z wieloletnim doświadczeniem w branży handlowej. 
+                Specjalizujemy się w sprzedaży części zamiennych do pojazdów włoskich marek, 
+                ale w naszym asortymencie znajdziesz części do wszystkich marek samochodów.
               </p>
               <p className="text-lg text-gray-600 mb-8">
-                Nasz zespół składa się z wykwalifikowanych mechaników, którzy gwarantują 
-                najwyższą jakość usług i profesjonalne podejście do każdego klienta.
+                Nasz doświadczony zespół służy profesjonalnym doradztwem, pomagając w wyborze 
+                odpowiednich części i akcesoriów dostosowanych do Twojego pojazdu i potrzeb.
               </p>
               <div className="flex items-center space-x-4">
                 <div className="flex items-center space-x-2">
@@ -135,15 +135,15 @@ const Index = () => {
                 </div>
                 <div className="flex items-center space-x-2">
                   <Users className="w-6 h-6 text-green-600" />
-                  <span className="text-gray-700 font-medium">Profesjonalizm</span>
+                  <span className="text-gray-700 font-medium">Fachowe doradztwo</span>
                 </div>
               </div>
             </div>
             <div className="bg-gradient-to-br from-red-100 to-green-100 rounded-2xl p-8 text-center">
-              <CarFront className="w-24 h-24 text-red-600 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Twój partner w motoryzacji</h3>
+              <ShoppingCart className="w-24 h-24 text-red-600 mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">Twój sklep motoryzacyjny</h3>
               <p className="text-gray-600">
-                Zaufanie klientów to nasz największy kapitał
+                Jakość i profesjonalne doradztwo w jednym miejscu
               </p>
             </div>
           </div>
