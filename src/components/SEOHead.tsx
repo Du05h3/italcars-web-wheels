@@ -92,7 +92,7 @@ const SEOHead = ({
     });
 
     // Add structured data (JSON-LD)
-    let jsonLd = document.querySelector('script[type="application/ld+json"]');
+    let jsonLd = document.querySelector('script[type="application/ld+json"]') as HTMLScriptElement;
     if (!jsonLd) {
       jsonLd = document.createElement('script');
       jsonLd.type = 'application/ld+json';
